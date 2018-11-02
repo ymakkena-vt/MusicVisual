@@ -11,4 +11,7 @@ package musicpreference;
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose, Saunders Cox
  * @version 2018.11.02
-*/
+ */
+public class MusicWindowGUI {
+
+}

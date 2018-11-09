@@ -6,21 +6,12 @@
 // -- Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
 package musicpreference;
 
-import CS2114.Window;
-
 /**
- * Class that creates the Window representation
+ * Class that creates each Glyph to be used in the window
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
- * @version 2018.11.02
+ * @version 2018.11.09
  */
-public class MusicWindowGUI {
-    private Window window;
-    private DLList<Person> people;
-    private DLList<GlyphGUI> glyphs;
+public class GlyphGUI {
 
-
-    public MusicWindowGUI() {
-
-    }
 }

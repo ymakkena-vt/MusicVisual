@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 /**
  * Class that represents a doubly-linked list
  * 
- * @author Yash Makkena (ymakkena), Michele Ambrose, Saunders Cox
+ * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
  * @version 2018.10.31
  *
  * @param <E>
@@ -25,7 +25,7 @@ public class DLList<E> {
      * 
      * @param <E>
      *            This is the type of object that this class will store
-     * @author Yash Makkena (ymakkena), Michele Ambrose, Saunders Cox
+     * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
      * @version 2018.10.31
      */
     private static class Node<E> {

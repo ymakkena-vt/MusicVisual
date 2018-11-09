@@ -6,20 +6,13 @@
 // -- Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
 package musicpreference;
 
-import CS2114.Window;
-
 /**
- * Class that creates the Window representation
+ * Class that creates data structures from survey input
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
- * @version 2018.11.02
+ * @version 2018.11.09
  */
-public class MusicWindowGUI {
-    private Window window;
-    private DLList<Person> people;
-
-
-    public MusicWindowGUI() {
-
-    }
+public class SurveyInput {
+    private static final String MUSIC_FILE = "";
+    private static final String PEOPLE_FILE = "";
 }

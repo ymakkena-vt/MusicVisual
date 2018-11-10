@@ -74,6 +74,9 @@ public class Person {
      *            the list of songs with filled in answers
      */
     public void setSongs(DLList<Song> song) {
+        if (song == null) {
+            throw new IllegalArgumentException();
+        }
         this.songs = song;
     }
 

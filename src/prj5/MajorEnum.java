@@ -3,15 +3,20 @@
 // As a Hokie, I will conduct myself with honor and integrity at all times.
 // I will not lie, cheat, or steal, nor will I accept the actions of those who
 // do.
-// -- Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
-package musicpreference;
+// -- Yash Makkena (ymakkena), Michele Ambrose(mla2911), Saunders Cox
+// (saunderscox)
+package prj5;
 
 /**
- * Class that creates each Glyph to be used in the window
+ * Enumeration that stores possible majors for a Person
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
- * @version 2018.11.09
+ *         (saunderscox)
+ * @version 2018.10.31
  */
-public class GlyphGUI {
+public enum MajorEnum {
+    CS, ENGE, MATH_CMDA, OTHER;
+    private MajorEnum() {
 
+    }
 }

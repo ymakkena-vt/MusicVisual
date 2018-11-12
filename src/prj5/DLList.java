@@ -3,8 +3,9 @@
 // As a Hokie, I will conduct myself with honor and integrity at all times.
 // I will not lie, cheat, or steal, nor will I accept the actions of those who
 // do.
-// -- Yash Makkena (ymakkena), Michele Ambrose, Saunders Cox
-package musicpreference;
+// -- Yash Makkena (ymakkena), Michele Ambrose(mla2911), Saunders Cox
+// (saunderscox)
+package prj5;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -13,6 +14,7 @@ import java.util.NoSuchElementException;
  * Class that represents a doubly-linked list
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
+ *         (saunderscox)
  * @version 2018.10.31
  *
  * @param <E>

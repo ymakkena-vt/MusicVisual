@@ -3,9 +3,10 @@
 // As a Hokie, I will conduct myself with honor and integrity at all times.
 // I will not lie, cheat, or steal, nor will I accept the actions of those who
 // do.
-// -- Yash Makkena (ymakkena), Michele Ambrose, Saunders Cox
+// -- Yash Makkena (ymakkena), Michele Ambrose(mla2911), Saunders Cox
+// (saunderscox)
 
-package musicpreference;
+package prj5;
 
 import student.TestCase;
 
@@ -13,6 +14,7 @@ import student.TestCase;
  * Tests Person
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
+ *         (saunderscox)
  * @version 2018.11.09
  */
 public class PersonTest extends TestCase {
@@ -62,35 +64,40 @@ public class PersonTest extends TestCase {
         assertEquals("Hello", person1.getSongs().get(0).getName());
         assertEquals(1982, person1.getSongs().get(1).getYear());
     }
-    
+
+
     /**
      * Tests getRegion
      */
     public void testGetRegion() {
         assertEquals(RegionEnum.NE_US, person1.getRegion());
     }
-    
+
+
     /**
      * Tests getHobby
      */
     public void testGetHobby() {
         assertEquals(HobbyEnum.MUSIC, person1.getHobby());
     }
-    
+
+
     /**
      * Tests getMajor
      */
     public void testGetMajor() {
         assertEquals(MajorEnum.CS, person1.getMajor());
     }
-    
+
+
     /**
      * Tests getID
      */
     public void testGetID() {
         assertEquals(1, person1.getID());
     }
-    
+
+
     /**
      * Tests getDate
      */

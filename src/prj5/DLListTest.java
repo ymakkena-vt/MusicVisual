@@ -3,31 +3,38 @@
 // As a Hokie, I will conduct myself with honor and integrity at all times.
 // I will not lie, cheat, or steal, nor will I accept the actions of those who
 // do.
-// -- Yash Makkena (ymakkena), Michele Ambrose, Saunders Cox (saunderscox)
+// // -- Yash Makkena (ymakkena), Michele Ambrose(mla2911), Saunders Cox
+// (saunderscox)
+package prj5;
 
-package musicpreference;
-
-import static org.junit.Assert.assertEquals;
 import student.TestCase;
 
 /**
- * Tests SongTest
+ * Tests DLList
  * 
  * @author Yash Makkena (ymakkena), Michele Ambrose (mla2911), Saunders Cox
  *         (saunderscox)
  * @version 2018.11.09
  */
-public class SongTest extends TestCase {
-    
+public class DLListTest extends TestCase {
+
+    private DLList<Song> songList;
     private Song song1;
-    
+    private Song song2;
+    private Song song3;
+
+
     /**
      * Sets up the test
      */
     public void setUp() {
-        song1 = new Song("Hello", "Adele", 2015, "pop");
+        songList = new DLList<Song>();
+        song1 = new Song("Hello", "Adele", 2015, "Soul");
+        song2 = new Song("Come Together", "The Beatles", 1969, "Rock");
+        song3 = new Song("September", "Earth, Wind, and Fire", 1978, "R&B");
     }
-    
+
+
     /**
      * Tests setHeard
      */
@@ -36,7 +43,8 @@ public class SongTest extends TestCase {
         song1.setHeard(true);
         assertEquals(true, song1.getHeard());
     }
-    
+
+
     /**
      * Tests setLiked
      */
@@ -45,35 +53,41 @@ public class SongTest extends TestCase {
         song1.setLiked(true);
         assertEquals(true, song1.getLiked());
     }
-    
+
+
     /**
      * Tests getName
      */
     public void testGetName() {
         assertEquals("Hello", song1.getName());
+        assertEquals("Come Together", song2.getName());
     }
-    
+
+
     /**
      * Tests getYear
      */
     public void testGetYear() {
         assertEquals(2015, song1.getYear());
     }
-    
+
+
     /**
      * Tests getArtist
      */
     public void testGetArtist() {
-        assertEquals("Adele", song1.getArtist());
+        assertEquals(2015, song1.getYear());
     }
-    
+
+
     /**
      * Tests getGenre
      */
     public void testGetGenre() {
-        assertEquals("pop", song1.getGenre());
+        assertEquals("Soul", song1.getGenre());
     }
-    
+
+
     /**
      * Tests getHeard
      */
@@ -82,7 +96,8 @@ public class SongTest extends TestCase {
         song1.setHeard(true);
         assertEquals(true, song1.getHeard());
     }
-    
+
+
     /**
      * Tests getLiked
      */

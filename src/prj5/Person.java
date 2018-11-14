@@ -18,7 +18,7 @@ public class Person {
     /**
      * Stores the ID of the person
      */
-    private int ID;
+    private int iD;
     /**
      * Stores the date a person took the survey
      */
@@ -61,7 +61,7 @@ public class Person {
         HobbyEnum hobby,
         MajorEnum major,
         RegionEnum region) {
-        this.ID = ID;
+        this.iD = ID;
         this.date = date;
         this.hobby = hobby;
         this.major = major;
@@ -129,7 +129,7 @@ public class Person {
      * @return the ID field
      */
     public int getID() {
-        return this.ID;
+        return this.iD;
     }
 
 
@@ -140,5 +140,12 @@ public class Person {
      */
     public String getDate() {
         return this.date;
+    }
+    
+    /**
+     * Returns the Person as a string
+     */
+    public String toString() {
+        return "ID: " + getID() + ", Region: " + getRegion() + ", Hobby: " + getHobby() + ", Major " + getMajor();
     }
 }

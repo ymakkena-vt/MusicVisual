@@ -187,6 +187,10 @@ public class DLList<E> {
      *             if there no node at the given index
      */
     public E get(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("No element exists at "
+                + index);
+        }
         return getNodeAtIndex(index).getData();
     }
 
@@ -293,6 +297,9 @@ public class DLList<E> {
      * @return true if successful
      */
     public boolean remove(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
         Node<E> nodeToBeRemoved = getNodeAtIndex(index);
         nodeToBeRemoved.previous().setNext(nodeToBeRemoved.next());
         nodeToBeRemoved.next().setPrevious(nodeToBeRemoved.previous());
@@ -337,7 +344,9 @@ public class DLList<E> {
             Node<E> currNode = head.next();
             while (currNode != tail) {
                 E element = currNode.getData();
-                builder.append(element.toString());
+                Song song = (Song) element;
+                
+                builder.append(song.toString());
                 if (currNode.next != tail) {
                     builder.append(", ");
                 }

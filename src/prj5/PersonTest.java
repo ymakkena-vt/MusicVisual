@@ -104,4 +104,13 @@ public class PersonTest extends TestCase {
     public void testGetDate() {
         assertEquals("2018-03-14", person1.getDate());
     }
+    
+    /**
+     * Tests toString
+     */
+    public void testToString() {
+        assertEquals("ID: 1, Region: NE_US, Hobby: MUSIC, Major CS"
+, person1.toString());
+        
+    }
 }

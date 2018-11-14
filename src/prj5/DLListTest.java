@@ -36,74 +36,131 @@ public class DLListTest extends TestCase {
 
 
     /**
-     * Tests setHeard
+     * Tests isEmpty
      */
-    public void testSetHeard() {
-        assertEquals(false, song1.getHeard());
-        song1.setHeard(true);
-        assertEquals(true, song1.getHeard());
+    public void testIsEmpty() {
+        assertEquals(true, songList.isEmpty());
+        songList.add(song1);
+        assertEquals(false, songList.isEmpty());
+        songList.remove(song1);
+        assertEquals(true, songList.isEmpty());
     }
 
 
     /**
-     * Tests setLiked
+     * Tests size
      */
-    public void testSetLiked() {
-        assertEquals(false, song1.getLiked());
-        song1.setLiked(true);
-        assertEquals(true, song1.getLiked());
+    public void testSize() {
+        assertEquals(0, songList.size());
+        songList.add(song1);
+        assertEquals(1, songList.size());
+        songList.remove(0);
+        assertEquals(0, songList.size());
     }
 
 
     /**
-     * Tests getName
+     * Tests clear
      */
-    public void testGetName() {
-        assertEquals("Hello", song1.getName());
-        assertEquals("Come Together", song2.getName());
+    public void testClear() {
+        songList.add(song1);
+        songList.add(song2);
+        songList.clear();
+        assertEquals(true, songList.isEmpty());
     }
 
 
     /**
-     * Tests getYear
+     * Tests contains
      */
-    public void testGetYear() {
-        assertEquals(2015, song1.getYear());
+    public void testContains() {
+        assertEquals(false, songList.contains(song1));
+        songList.add(song1);
+        assertEquals(true, songList.contains(song1));
+
     }
 
 
     /**
-     * Tests getArtist
+     * Tests get
      */
-    public void testGetArtist() {
-        assertEquals(2015, song1.getYear());
+    public void testGet() {
+        try {
+            songList.get(0);
+            fail("There should be no item at index 0");
+        }
+        catch (Exception e) {
+            assertEquals(true, e != null);
+        }
+        songList.add(song1);
+        assertEquals(song1, songList.get(0));
     }
 
 
     /**
-     * Tests getGenre
+     * Tests add
      */
-    public void testGetGenre() {
-        assertEquals("Soul", song1.getGenre());
+    public void testAdd() {
+        songList.add(song1);
+        songList.add(song2);
+        songList.add(song3);
+        assertEquals(song3, songList.get(2));
+        assertEquals(3, songList.size());
+
+        Song nullSong = null;
+        try {
+            songList.add(nullSong);
+            fail("Cannot add null item");
+        }
+        catch (Exception e) {
+            assertEquals(true, e != null);
+        }
+
+        songList.add(0, song1);
+        songList.add(0, song2);
+        assertEquals(song2, songList.get(0));
     }
 
 
     /**
-     * Tests getHeard
+     * Tests lastIndexOf
      */
-    public void testGetHeard() {
-        assertEquals(false, song1.getHeard());
-        song1.setHeard(true);
-        assertEquals(true, song1.getHeard());
+    public void testLastIndexOf() {
+        assertEquals(-1, songList.lastIndexOf(song1));
+        songList.add(song1);
+        songList.add(song2);
+
+        assertEquals(0, songList.lastIndexOf(song1));
+        assertEquals(1, songList.lastIndexOf(song2));
     }
 
 
     /**
-     * Tests getLiked
+     * Tests remove
      */
-    public void testGetLiked() {
-        assertEquals(false, song1.getLiked());
-        song1.setLiked(true);
-        assertEquals(true, song1.getLiked());
+    public void testRemove() {
+        try {
+            songList.remove(0);
+            fail("Cannot remove item out of bounds");
+        }
+        catch (Exception e) {
+            assertEquals(true, e != null);
+        }
+
+        songList.add(song1);
+        assertEquals(true, songList.remove(0));
+    }
+
+    /**
+     * Tests toString
+     */
+    public void testToString() {
+        songList.add(song1);
+        songList.add(song2);
+        assertEquals(
+            "{Hello by Adele - Year: 2015 - Genre: Soul, Come Together by "
+                + "The Beatles - Year: 1969 - Genre: Rock}", songList
+                    .toString());
+        ;
     }
 }

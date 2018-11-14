@@ -100,4 +100,12 @@ public class SongTest extends TestCase {
         song1.setLiked(true);
         assertEquals(true, song1.getLiked());
     }
+
+    /**
+     * Tests toString
+     */
+    public void testToString() {
+        assertEquals("Hello by Adele - Year: 2015 - Genre: pop", song1
+            .toString());
+    }
 }

@@ -31,6 +31,7 @@ public class GUIMusicWindow {
      * the DLList of people to
      */
     private DLList<Person> people;
+    private DLList<Song> songs;
     /**
      * the representation of how many readers heard a song
      */
@@ -82,7 +83,10 @@ public class GUIMusicWindow {
      * Creates the buttons for the window GUI and adds all shapes and buttons
      * to the window.
      */
-    public GUIMusicWindow() {
+    public GUIMusicWindow(SurveyInput si) {
+        this.people = si.inputPerson();
+        this.songs = si.inputMusic();
+
         // creates a new window with title "Project 5"
         window = new Window("                       "
             + "                                                Project 5");
@@ -426,6 +430,16 @@ public class GUIMusicWindow {
 
         System.exit(0);
 
+    }
+
+
+    /**
+     * Outputs for the intermediate submission
+     */
+    public void tempOutput() {
+        for (int x = 0; x < songs.size(); x++) {
+
+        }
     }
 
 }

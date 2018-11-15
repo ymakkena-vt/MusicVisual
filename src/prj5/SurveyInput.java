@@ -8,6 +8,10 @@
 
 package prj5;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * Class that creates data structures from survey input
  * 
@@ -16,6 +20,46 @@ package prj5;
  * @version 2018.11.09
  */
 public class SurveyInput {
-    private static final String MUSIC_FILE = "";
-    private static final String PEOPLE_FILE = "";
+    private String musicFile = "";
+    private String peopleFile = "";
+
+
+    /**
+     * Creates a SurveyInput with the given files.
+     * 
+     * @param music
+     *            the music file
+     * @param people
+     *            the person file
+     */
+    public SurveyInput(String music, String people) {
+        this.musicFile = music;
+        this.peopleFile = people;
+    }
+
+
+    public DLList<Song> inputMusic() {
+        DLList<Song> list = new DLList<Song>();
+        try {
+            Scanner sc = new Scanner(new File(musicFile));
+
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+
+        }
+        return list;
+    }
+
+
+    public DLList<Person> inputPerson() {
+        DLList<Person> list = new DLList<Person>();
+        try {
+            Scanner sc = new Scanner(new File(peopleFile));
+        }
+        catch (FileNotFoundException e) {
+
+        }
+        return list;
+    }
 }

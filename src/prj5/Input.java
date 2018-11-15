@@ -19,6 +19,6 @@ package prj5;
 public class Input {
 
     public static void main(String[] args) {
-        new GUIMusicWindow();
+        new GUIMusicWindow(new SurveyInput(args[0], args[1]));
     }
 }

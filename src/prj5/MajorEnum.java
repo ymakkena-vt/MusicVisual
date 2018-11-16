@@ -19,4 +19,20 @@ public enum MajorEnum {
     private MajorEnum() {
 
     }
+    
+    public static MajorEnum getMajor(String major) {
+        if (major.toUpperCase().equals("COMPUTER SCIENCE")) {
+            return CS;
+        }
+        if (major.toUpperCase().equals("MATH OR CMDA")) {
+            return MATH_CMDA;
+        }
+        if (major.toUpperCase().equals("OTHER ENGINEERING")) {
+            return ENGE;
+        }
+        if (major.toUpperCase().equals("OTHER")) {
+            return OTHER;
+        }
+        return null;
+    }
 }

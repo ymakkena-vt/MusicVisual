@@ -20,4 +20,23 @@ public enum RegionEnum {
     private RegionEnum() {
 
     }
+
+
+    public static RegionEnum getRegion(String region) {
+        if (region.equals(
+            "United States (other than Southeast or Northwest)")) {
+            return OTHER_US;
+        }
+        if (region.toUpperCase().equals("NORTHEAST")) {
+            return NE_US;
+        }
+        if (region.toUpperCase().equals("SOUTHEAST")) {
+            return SE_US;
+        }
+        if (region.equals("Outside of United States")) {
+            return OUTSIDE;
+        }
+        return null;
+    }
+
 }

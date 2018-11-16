@@ -437,6 +437,7 @@ public class GUIMusicWindow {
      * Outputs for the intermediate submission
      */
     public void tempOutput() {
+        
         for (int x = 0; x < songs.size(); x++) {
 
         }

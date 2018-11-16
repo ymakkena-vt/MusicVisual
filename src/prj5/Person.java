@@ -58,9 +58,9 @@ public class Person {
     public Person(
         int ID,
         String date,
-        HobbyEnum hobby,
         MajorEnum major,
-        RegionEnum region) {
+        RegionEnum region,
+        HobbyEnum hobby) {
         this.iD = ID;
         this.date = date;
         this.hobby = hobby;
@@ -141,11 +141,13 @@ public class Person {
     public String getDate() {
         return this.date;
     }
-    
+
+
     /**
      * Returns the Person as a string
      */
     public String toString() {
-        return "ID: " + getID() + ", Region: " + getRegion() + ", Hobby: " + getHobby() + ", Major " + getMajor();
+        return "ID: " + getID() + ", Region: " + getRegion() + ", Hobby: "
+            + getHobby() + ", Major " + getMajor();
     }
 }

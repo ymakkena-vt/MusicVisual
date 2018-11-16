@@ -19,4 +19,21 @@ public enum HobbyEnum {
     private HobbyEnum() {
 
     }
+
+
+    public static HobbyEnum getHobby(String hobby) {
+        if (hobby.toUpperCase().equals("READING")) {
+            return READ;
+        }
+        if (hobby.toUpperCase().equals("MUSIC")) {
+            return MUSIC;
+        }
+        if (hobby.toUpperCase().equals("SPORTS")) {
+            return SPORTS;
+        }
+        if (hobby.toUpperCase().equals("ART")) {
+            return ART;
+        }
+        return null;
+    }
 }

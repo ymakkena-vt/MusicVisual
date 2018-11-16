@@ -10,6 +10,7 @@ package prj5;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -43,6 +44,14 @@ public class SurveyInput {
         try {
             Scanner sc = new Scanner(new File(musicFile));
 
+            while (sc.hasNextLine()) {
+                String songInfo = sc.nextLine();
+                String[] info = songInfo.split(",");
+                Song song = new Song(info[0], info[1], Integer.valueOf(info[2]),
+                    info[3]);
+                list.add(song);
+            }
+
             sc.close();
         }
         catch (FileNotFoundException e) {
@@ -52,10 +61,41 @@ public class SurveyInput {
     }
 
 
-    public DLList<Person> inputPerson() {
+    public DLList<Person> inputPerson(DLList<Song> songs) {
         DLList<Person> list = new DLList<Person>();
         try {
             Scanner sc = new Scanner(new File(peopleFile));
+
+            while (sc.hasNextLine()) {
+                String studentInfo = sc.nextLine();
+                String[] info = studentInfo.split(",", -1);
+                Person temp = new Person(Integer.parseInt(info[0]), info[1],
+                    MajorEnum.getMajor(info[2]), RegionEnum.getRegion(info[3]),
+                    HobbyEnum.getHobby(info[4]));
+                temp.setSongs(songs.clone());
+
+                DLList<Song> personSongs = temp.getSongs();
+                Iterator<Song> iterator = personSongs.iterator();
+
+                int position = 5;
+                while (iterator.hasNext()) {
+                    Song curr = iterator.next();
+                    if (info[position].equals("Yes")) {
+                        curr.setHeard(true);
+                    }
+                    else {
+                        curr.setHeard(false);
+                    }
+                    if (info[position + 1].equals("Yes")) {
+                        curr.setLiked(true);
+                    }
+                    else {
+                        curr.setLiked(false);
+                    }
+                    position += 2;
+                }
+            }
+            sc.close();
         }
         catch (FileNotFoundException e) {
 

@@ -344,8 +344,8 @@ public class DLList<E> {
             Node<E> currNode = head.next();
             while (currNode != tail) {
                 E element = currNode.getData();
-                Song song = (Song) element;
-                
+                Song song = (Song)element;
+
                 builder.append(song.toString());
                 if (currNode.next != tail) {
                     builder.append(", ");
@@ -356,6 +356,23 @@ public class DLList<E> {
 
         builder.append("}");
         return builder.toString();
+    }
+
+
+    /**
+     * Creates a shallow copy of the given list
+     * 
+     * @param original
+     *            the DLList to be copied
+     * @return a shallow copy of the list
+     */
+    public DLList<E> clone() {
+        DLList<E> copy = new DLList<E>();
+        Iterator<E> iterator = this.iterator();
+        while (iterator.hasNext()) {
+            copy.add(iterator.next());
+        }
+        return copy;
     }
 
 

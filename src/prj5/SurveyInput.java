@@ -43,6 +43,7 @@ public class SurveyInput {
         DLList<Song> list = new DLList<Song>();
         try {
             Scanner sc = new Scanner(new File(musicFile));
+            sc.nextLine();
 
             while (sc.hasNextLine()) {
                 String songInfo = sc.nextLine();
@@ -65,6 +66,7 @@ public class SurveyInput {
         DLList<Person> list = new DLList<Person>();
         try {
             Scanner sc = new Scanner(new File(peopleFile));
+            sc.nextLine();
 
             while (sc.hasNextLine()) {
                 String studentInfo = sc.nextLine();

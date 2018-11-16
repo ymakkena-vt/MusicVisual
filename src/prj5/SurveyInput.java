@@ -114,7 +114,6 @@ public class SurveyInput {
                         }
                         position += 2;
                     }
-                    System.out.println(temp.toString());
                     list.add(temp);
                 }
             }

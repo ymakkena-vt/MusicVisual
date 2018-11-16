@@ -121,12 +121,19 @@ public class DLList<E> {
      * Create a new DLList object.
      */
     public DLList() {
-        head = null;
-        tail = null;
+        init();
+    }
+
+
+    /**
+     * Initializes the object to have the head and tail nodes
+     */
+    private void init() {
+        head = new DLList.Node<E>(null);
+        tail = new DLList.Node<E>(null);
         head.setNext(tail);
-        head.setPrevious(null);
-        tail.setNext(null);
-        tail.setPrevious(head));
+        tail.setPrevious(head);
+        size = 0;
     }
 
 
@@ -154,9 +161,7 @@ public class DLList<E> {
      * Removes all of the elements from the list
      */
     public void clear() {
-        size = 0;
-        head = null;
-        tail = null;
+        init();
     }
 
 
@@ -382,7 +387,6 @@ public class DLList<E> {
 
     private class DLListIterator<A> implements Iterator<E> {
         private Node<E> current;
-        private boolean canRemove;
 
 
         /**
@@ -390,7 +394,6 @@ public class DLList<E> {
          */
         public DLListIterator() {
             current = head;
-            canRemove = false;
         }
 
 
@@ -416,7 +419,6 @@ public class DLList<E> {
         public E next() {
             if (hasNext()) {
                 current = current.next;
-                canRemove = true;
                 return current.getData();
             }
             throw new NoSuchElementException(

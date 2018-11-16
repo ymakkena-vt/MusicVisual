@@ -499,6 +499,7 @@ public class GUIMusicWindow {
         while (song.hasNext()) {
             Iterator<Person> person = people.iterator();
             Song temp = song.next();
+            
         }
     }
 

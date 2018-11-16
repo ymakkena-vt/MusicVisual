@@ -8,7 +8,7 @@ import student.TestCase;
 // I will not lie, cheat, or steal, nor will I accept the actions of
 // those who do.
 // -- Michele Ambrose (mla2911), Yash Makkena (ymakkena), Saunders Cox
-// (saunderscox)
+//    (saunderscox)
 /**
  *
  * Tests the SurveyInput class

@@ -362,13 +362,12 @@ public class DLList<E> {
     /**
      * Creates a shallow copy of the given list
      * 
-     * @param original
-     *            the DLList to be copied
      * @return a shallow copy of the list
      */
     public DLList<E> clone() {
         DLList<E> copy = new DLList<E>();
         Iterator<E> iterator = this.iterator();
+        iterator.next();
         while (iterator.hasNext()) {
             copy.add(iterator.next());
         }
@@ -429,27 +428,5 @@ public class DLList<E> {
                 "There are no nodes left in the list.");
         }
 
-
-        /**
-         * Removes the last object returned with next() from the list
-         *
-         * @throws IllegalStateException
-         *             if next has not been called yet
-         *             and if the element has already been removed
-         */
-        @Override
-        public void remove() {
-            if (!canRemove) {
-                throw new IllegalStateException(
-                    "This object cannot be removed.");
-            }
-            canRemove = false;
-            Node<E> pre = current.previous();
-            Node<E> aft = current.next();
-            pre.setNext(aft);
-            aft.setPrevious(pre);
-            current = null;
-            size--;
-        }
     }
 }

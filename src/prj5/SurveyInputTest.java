@@ -34,7 +34,7 @@ public class SurveyInputTest extends TestCase {
     /**
      * tests the inputMusic() method
      */
-    public void testInputMusic() {
+    public void testInputMusic() {  
         DLList<Song> list = new DLList<Song>();
         Song song1 = new Song("Let It Be", "Beatles", 1970, "classic rock");
         Song song2 = new Song("Storytime", "Nightwish", 2011, "symphonic rock");

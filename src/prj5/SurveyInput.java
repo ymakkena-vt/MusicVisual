@@ -21,8 +21,8 @@ import java.util.Scanner;
  * @version 2018.11.09
  */
 public class SurveyInput {
-    private String musicFile = "";
-    private String peopleFile = "";
+    private String musicFile;
+    private String peopleFile;
 
 
     /**
@@ -39,6 +39,11 @@ public class SurveyInput {
     }
 
 
+    /**
+     * Inputs the music data
+     * 
+     * @return a list of formatted songs
+     */
     public DLList<Song> inputMusic() {
         DLList<Song> list = new DLList<Song>();
         try {
@@ -56,12 +61,19 @@ public class SurveyInput {
             sc.close();
         }
         catch (FileNotFoundException e) {
-
+// Do nothing here
         }
         return list;
     }
 
 
+    /**
+     * Inputs the people
+     * 
+     * @param songs
+     *            the list of song for each person
+     * @return a list of people
+     */
     public DLList<Person> inputPerson(DLList<Song> songs) {
         DLList<Person> list = new DLList<Person>();
         try {
@@ -100,7 +112,7 @@ public class SurveyInput {
             sc.close();
         }
         catch (FileNotFoundException e) {
-
+// Do nothing here
         }
         return list;
     }

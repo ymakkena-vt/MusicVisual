@@ -141,11 +141,13 @@ public class Song {
     public boolean getLiked() {
         return this.answerLiked;
     }
-    
+
+
     /**
      * Returns the song as a string
      */
     public String toString() {
-        return getName() + " by " + getArtist() + " - Year: " + getYear() + " - Genre: " + getGenre();
+        return getName() + " by " + getArtist() + " - Year: " + getYear()
+            + " - Genre: " + getGenre();
     }
 }

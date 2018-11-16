@@ -7,6 +7,7 @@
 // (saunderscox)
 package prj5;
 
+import java.util.Iterator;
 import student.TestCase;
 
 /**
@@ -151,6 +152,7 @@ public class DLListTest extends TestCase {
         assertEquals(true, songList.remove(0));
     }
 
+
     /**
      * Tests toString
      */
@@ -161,6 +163,19 @@ public class DLListTest extends TestCase {
             "{Hello by Adele - Year: 2015 - Genre: Soul, Come Together by "
                 + "The Beatles - Year: 1969 - Genre: Rock}", songList
                     .toString());
-        ;
+    }
+
+
+    public void testIterator() {
+        Iterator<Song> iterator = songList.iterator();
+        assertTrue(iterator.hasNext());
+    }
+
+
+    public void testClone() {
+        songList.add(song1);
+        songList.add(song2);
+        DLList<Song> next = songList.clone();
+        assertEquals(songList.get(1), next.get(1));
     }
 }

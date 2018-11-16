@@ -147,7 +147,7 @@ public class Person {
      * Returns the Person as a string
      */
     public String toString() {
-        return "ID: " + getID() + ", Region: " + getRegion() + ", Hobby: "
-            + getHobby() + ", Major " + getMajor();
+        return "ID: " + getID() + ", Major " + getMajor() + ", Region: "
+            + getRegion() + ", Hobby: " + getHobby();
     }
 }

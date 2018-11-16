@@ -8,6 +8,8 @@
 package prj5;
 
 import java.awt.Color;
+import java.util.Comparator;
+import java.util.Iterator;
 import CS2114.Button;
 import CS2114.Shape;
 import CS2114.TextShape;
@@ -434,12 +436,67 @@ public class GUIMusicWindow {
 
 
     /**
+     * Sorts the song by genre
+     */
+    public void sortGenre() {
+        DLList<Song> sort = new DLList<Song>();
+        Iterator<Song> iterator = songs.iterator();
+        while (iterator.hasNext()) {
+            Song temp = iterator.next();
+            int position = 0;
+            Iterator<Song> sorter = sort.iterator();
+            while (sorter.hasNext()) {
+                if (temp.getGenre().compareTo(sorter.next().getGenre()) > 0) {
+                    position++;
+                }
+            }
+            sort.add(position, temp);
+        }
+        this.songs = sort;
+    }
+
+
+    /**
+     * Sorts the songs by title
+     */
+    public void sortTitle() {
+        DLList<Song> sorted = new DLList<Song>();
+        Iterator<Song> temp1 = songs.iterator();
+        int position = 0;
+        while (temp1.hasNext()) {
+            Song lowest = temp1.next();
+            Iterator<Song> temp2 = songs.iterator();
+            while (temp2.hasNext()) {
+                for (int x = 0; x < position; x++) {
+                    temp2.next();
+                }
+                Song other = temp2.next();
+                if (lowest.getName().compareTo(other.getName()) > 0) {
+                    lowest = other;
+                }
+            }
+            position++;
+            sorted.add(lowest);
+        }
+        this.songs = sorted;
+    }
+
+
+    /**
      * Outputs for the intermediate submission
      */
     public void tempOutput() {
 
         for (int x = 0; x < songs.size(); x++) {
+            int readingHeard = 0;
+            int artHeard = 0;
+            int sportsHeard = 0;
+            int musicHeard = 0;
 
+            int readingLiked = 0;
+            int artLiked = 0;
+            int sportsLiked = 0;
+            int musicLiked = 0;
         }
     }
 

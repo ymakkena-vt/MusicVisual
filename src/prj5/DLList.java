@@ -344,9 +344,7 @@ public class DLList<E> {
             Node<E> currNode = head.next();
             while (currNode != tail) {
                 E element = currNode.getData();
-                Song song = (Song)element;
-
-                builder.append(song.toString());
+                builder.append(element.toString());
                 if (currNode.next != tail) {
                     builder.append(", ");
                 }
@@ -367,9 +365,9 @@ public class DLList<E> {
     public DLList<E> clone() {
         DLList<E> copy = new DLList<E>();
         Iterator<E> iterator = this.iterator();
-        iterator.next();
         while (iterator.hasNext()) {
-            copy.add(iterator.next());
+            E other = iterator.next();
+            copy.add(other);
         }
         return copy;
     }
@@ -393,7 +391,7 @@ public class DLList<E> {
          * Creates a new DLListIterator
          */
         public DLListIterator() {
-            current = head.next;
+            current = head;
         }
 
 
@@ -404,7 +402,7 @@ public class DLList<E> {
          */
         @Override
         public boolean hasNext() {
-            return current.next() != null;
+            return current.next.data != null;
         }
 
 

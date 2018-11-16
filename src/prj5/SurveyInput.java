@@ -67,7 +67,7 @@ public class SurveyInput {
             sc.close();
         }
         catch (FileNotFoundException e) {
-// Do nothing here
+            System.out.println("File does not exist");
         }
         return list;
     }
@@ -118,7 +118,7 @@ public class SurveyInput {
             sc.close();
         }
         catch (FileNotFoundException e) {
-// Do nothing here
+            System.out.println("File does not exist");
         }
         return list;
     }

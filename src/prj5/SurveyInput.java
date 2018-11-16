@@ -21,8 +21,14 @@ import java.util.Scanner;
  * @version 2018.11.09
  */
 public class SurveyInput {
-    private String musicFile;
-    private String peopleFile;
+    /**
+     * Music file name
+     */
+    public String musicFile;
+    /**
+     * People file name
+     */
+    public String peopleFile;
 
 
     /**

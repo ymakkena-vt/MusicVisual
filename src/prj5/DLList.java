@@ -121,19 +121,12 @@ public class DLList<E> {
      * Create a new DLList object.
      */
     public DLList() {
-        init();
-    }
-
-
-    /**
-     * Initializes the object to have the head and tail nodes
-     */
-    private void init() {
-        head = new DLList.Node<E>(null);
-        tail = new DLList.Node<E>(null);
+        head = null;
+        tail = null;
         head.setNext(tail);
-        tail.setPrevious(head);
-        size = 0;
+        head.setPrevious(null);
+        tail.setNext(null);
+        tail.setPrevious(head));
     }
 
 
@@ -161,7 +154,9 @@ public class DLList<E> {
      * Removes all of the elements from the list
      */
     public void clear() {
-        init();
+        size = 0;
+        head = null;
+        tail = null;
     }
 
 

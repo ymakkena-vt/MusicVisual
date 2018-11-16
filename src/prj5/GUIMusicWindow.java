@@ -486,17 +486,19 @@ public class GUIMusicWindow {
      * Outputs for the intermediate submission
      */
     public void tempOutput() {
+        Iterator<Song> song = songs.iterator();
+        int readingHeard = 0;
+        int artHeard = 0;
+        int sportsHeard = 0;
+        int musicHeard = 0;
 
-        for (int x = 0; x < songs.size(); x++) {
-            int readingHeard = 0;
-            int artHeard = 0;
-            int sportsHeard = 0;
-            int musicHeard = 0;
-
-            int readingLiked = 0;
-            int artLiked = 0;
-            int sportsLiked = 0;
-            int musicLiked = 0;
+        int readingLiked = 0;
+        int artLiked = 0;
+        int sportsLiked = 0;
+        int musicLiked = 0;
+        while (song.hasNext()) {
+            Iterator<Person> person = people.iterator();
+            Song temp = song.next();
         }
     }
 

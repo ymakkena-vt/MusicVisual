@@ -89,30 +89,34 @@ public class SurveyInput {
             while (sc.hasNextLine()) {
                 String studentInfo = sc.nextLine();
                 String[] info = studentInfo.split(",", -1);
-                Person temp = new Person(Integer.parseInt(info[0]), info[1],
-                    MajorEnum.getMajor(info[2]), RegionEnum.getRegion(info[3]),
-                    HobbyEnum.getHobby(info[4]));
-                temp.setSongs(songs.clone());
+                if (info[0].length() >= 1) {
+                    System.out.println(info[0]);
+                    Person temp = new Person(Integer.valueOf(info[0]), info[1],
+                        MajorEnum.getMajor(info[2]), RegionEnum.getRegion(
+                            info[3]), HobbyEnum.getHobby(info[4]));
+                    temp.setSongs(songs.clone());
 
-                DLList<Song> personSongs = temp.getSongs();
-                Iterator<Song> iterator = personSongs.iterator();
+                    DLList<Song> personSongs = temp.getSongs();
+                    Iterator<Song> iterator = personSongs.iterator();
 
-                int position = 5;
-                while (iterator.hasNext()) {
-                    Song curr = iterator.next();
-                    if (info[position].equals("Yes")) {
-                        curr.setHeard(true);
+                    int position = 5;
+                    while (iterator.hasNext()) {
+                        Song curr = iterator.next();
+                        if (info[position].equals("Yes")) {
+                            curr.setHeard(true);
+                        }
+                        else {
+                            curr.setHeard(false);
+                        }
+                        if (info[position + 1].equals("Yes")) {
+                            curr.setLiked(true);
+                        }
+                        else {
+                            curr.setLiked(false);
+                        }
+                        position += 2;
                     }
-                    else {
-                        curr.setHeard(false);
-                    }
-                    if (info[position + 1].equals("Yes")) {
-                        curr.setLiked(true);
-                    }
-                    else {
-                        curr.setLiked(false);
-                    }
-                    position += 2;
+                    list.add(temp);
                 }
             }
             sc.close();

@@ -49,16 +49,16 @@ public class SurveyInputTest extends TestCase {
      */
     public void testInputPerson() {
         DLList<Person> listP = new DLList<Person>();
-        Person person1 = new Person(1, "3/14/2018  9:14:00 AM", MajorEnum.MATH_CMDA,
-            RegionEnum.OTHER_US, HobbyEnum.READ);
-        Person person2 = new Person(2, "3/14/2018  10:20:00 AM", MajorEnum.MATH_CMDA,
-            RegionEnum.OTHER_US, HobbyEnum.SPORTS);
+        Person person1 = new Person(1, "3/14/2018  9:14:00 AM",
+            MajorEnum.MATH_CMDA, RegionEnum.NE_US, HobbyEnum.READ);
+        Person person2 = new Person(2, "3/14/2018  10:20:00 AM",
+            MajorEnum.MATH_CMDA, RegionEnum.OTHER_US, HobbyEnum.SPORTS);
 
         listP.add(person1);
         listP.add(person2);
         DLList<Person> inputList = si.inputPerson(si.inputMusic());
 
-        assertTrue(inputList.toString().equals(listP.toString()));
+        assertEquals(inputList.toString(), listP.toString());
 
     }
 

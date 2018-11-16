@@ -39,7 +39,7 @@ public class SurveyInput {
      * @param people
      *            the person file
      */
-    public SurveyInput(String music, String people) {
+    public SurveyInput(String people, String music) {
         this.musicFile = music;
         this.peopleFile = people;
     }

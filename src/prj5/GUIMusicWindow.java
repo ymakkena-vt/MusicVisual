@@ -469,9 +469,11 @@ public class GUIMusicWindow {
                 for (int x = 0; x < position; x++) {
                     temp2.next();
                 }
-                Song other = temp2.next();
-                if (lowest.getName().compareTo(other.getName()) > 0) {
-                    lowest = other;
+                if (temp2.hasNext()) {
+                    Song other = temp2.next();
+                    if (lowest.getName().compareTo(other.getName()) > 0) {
+                        lowest = other;
+                    }
                 }
             }
             position++;
@@ -495,10 +497,10 @@ public class GUIMusicWindow {
         int artLiked = 0;
         int sportsLiked = 0;
         int musicLiked = 0;
+        int index = 0;
         while (song.hasNext()) {
             Iterator<Person> person = people.iterator();
             Song temp = song.next();
-            int index = 0;
             while (person.hasNext()) {
                 Person one = person.next();
                 if (one.getSongs().get(index).getHeard()) {
@@ -530,6 +532,7 @@ public class GUIMusicWindow {
                     }
                 }
             }
+            index++;
             System.out.println("Song Title: " + temp.getName());
             System.out.println("Song Artist: " + temp.getArtist());
             System.out.println("Song Genre: " + temp.getGenre());

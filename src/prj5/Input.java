@@ -24,6 +24,7 @@ public class Input {
         if (args.length > 0) {
             gui = new GUIMusicWindow(new SurveyInput(args[0], args[1]));
         }
+        gui.sortGenre();
         gui.tempOutput();
         gui.sortTitle();
         gui.tempOutput();

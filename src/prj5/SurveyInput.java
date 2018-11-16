@@ -90,7 +90,6 @@ public class SurveyInput {
                 String studentInfo = sc.nextLine();
                 String[] info = studentInfo.split(",", -1);
                 if (info[0].length() >= 1) {
-                    System.out.println(info[0]);
                     Person temp = new Person(Integer.valueOf(info[0]), info[1],
                         MajorEnum.getMajor(info[2]), RegionEnum.getRegion(
                             info[3]), HobbyEnum.getHobby(info[4]));

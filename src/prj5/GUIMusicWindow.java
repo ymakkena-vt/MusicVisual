@@ -86,8 +86,26 @@ public class GUIMusicWindow {
      * to the window.
      */
     public GUIMusicWindow(SurveyInput si) {
-        this.songs = si.inputMusic();
-        this.people = si.inputPerson(this.songs);
+        // this.songs = si.inputMusic();
+        // this.people = si.inputPerson(this.songs);
+        songs = new DLList<Song>();
+        Song song1 = new Song("Hotline Bling", "Drake", 2015, "R&B");
+        Song song2 = new Song("Creep", "Radiohead", 1992, "Alternative");
+        song1.setHeard(true);
+        song2.setHeard(true);
+        song1.setLiked(false);
+        song2.setLiked(true);
+        songs.add(song1);
+        songs.add(song2);
+        people = new DLList<Person>();
+        Person person1 = new Person(1, "3/14/2018  9:14:00 AM",
+            MajorEnum.MATH_CMDA, RegionEnum.OTHER_US, HobbyEnum.READ);
+        Person person2 = new Person(2, "3/14/2018  10:20:00 AM",
+            MajorEnum.MATH_CMDA, RegionEnum.OTHER_US, HobbyEnum.SPORTS);
+        person1.setSongs(songs);
+        person2.setSongs(songs);
+        people.add(person1);
+        people.add(person2);
 
         // creates a new window with title "Project 5"
         window = new Window("                       "

@@ -19,9 +19,11 @@ package prj5;
 public class Input {
 
     public static void main(String[] args) {
-        GUIMusicWindow gui = new GUIMusicWindow(new SurveyInput(args[0],
-            args[1]));
-        gui.sortGenre();
+        GUIMusicWindow gui = new GUIMusicWindow(new SurveyInput(
+            "SongList2018S.csv", "musicSurveyData2018S.csv"));
+        if (args.length > 0) {
+            gui = new GUIMusicWindow(new SurveyInput(args[0], args[1]));
+        }
         gui.tempOutput();
         gui.sortTitle();
         gui.tempOutput();

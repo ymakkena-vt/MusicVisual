@@ -27,7 +27,7 @@ public class SurveyInputTest extends TestCase {
      * sets up tests
      */
     public void setUp() {
-        si = new SurveyInput("SongList2018S.csv", "musicSurveyData2018S.csv");
+        si = new SurveyInput("SongList2018S.csv", "MusicSurveyData2018S.csv");
     }
 
 

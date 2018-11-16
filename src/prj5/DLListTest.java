@@ -167,8 +167,15 @@ public class DLListTest extends TestCase {
 
 
     public void testIterator() {
+
         Iterator<Song> iterator = songList.iterator();
-        assertTrue(iterator.hasNext());
+
+        assertFalse(iterator.hasNext());
+
+        songList.add(song1);
+        songList.add(song2);
+        Iterator<Song> iterator1 = songList.iterator();
+        assertTrue(iterator1.hasNext());
     }
 
 

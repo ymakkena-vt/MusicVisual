@@ -499,7 +499,48 @@ public class GUIMusicWindow {
         while (song.hasNext()) {
             Iterator<Person> person = people.iterator();
             Song temp = song.next();
-            
+            int index = 0;
+            while (person.hasNext()) {
+                Person one = person.next();
+                if (one.getSongs().get(index).getHeard()) {
+                    if (one.getHobby() == HobbyEnum.ART) {
+                        artHeard++;
+                    }
+                    if (one.getHobby() == HobbyEnum.READ) {
+                        readingHeard++;
+                    }
+                    if (one.getHobby() == HobbyEnum.SPORTS) {
+                        sportsHeard++;
+                    }
+                    if (one.getHobby() == HobbyEnum.MUSIC) {
+                        musicHeard++;
+                    }
+                }
+                if (one.getSongs().get(index).getLiked()) {
+                    if (one.getHobby() == HobbyEnum.ART) {
+                        artLiked++;
+                    }
+                    if (one.getHobby() == HobbyEnum.READ) {
+                        readingLiked++;
+                    }
+                    if (one.getHobby() == HobbyEnum.SPORTS) {
+                        sportsLiked++;
+                    }
+                    if (one.getHobby() == HobbyEnum.MUSIC) {
+                        musicLiked++;
+                    }
+                }
+            }
+            System.out.println("Song Title: " + temp.getName());
+            System.out.println("Song Artist: " + temp.getArtist());
+            System.out.println("Song Genre: " + temp.getGenre());
+            System.out.println("Song Year: " + temp.getYear());
+            System.out.println("Heard");
+            System.out.println("reading:" + readingHeard + " art:" + artHeard
+                + " sports:" + sportsHeard + " music:" + musicHeard);
+            System.out.println("Likes");
+            System.out.println("reading:" + readingLiked + " art:" + artLiked
+                + " sports:" + sportsLiked + " music:" + musicLiked);
         }
     }
 

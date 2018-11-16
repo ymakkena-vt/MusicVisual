@@ -393,7 +393,7 @@ public class DLList<E> {
          * Creates a new DLListIterator
          */
         public DLListIterator() {
-            current = head;
+            current = head.next;
         }
 
 

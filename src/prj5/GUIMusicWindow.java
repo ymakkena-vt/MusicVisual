@@ -84,8 +84,8 @@ public class GUIMusicWindow {
      * to the window.
      */
     public GUIMusicWindow(SurveyInput si) {
-        this.people = si.inputPerson();
         this.songs = si.inputMusic();
+        this.people = si.inputPerson(this.songs);
 
         // creates a new window with title "Project 5"
         window = new Window("                       "
@@ -437,7 +437,7 @@ public class GUIMusicWindow {
      * Outputs for the intermediate submission
      */
     public void tempOutput() {
-        
+
         for (int x = 0; x < songs.size(); x++) {
 
         }

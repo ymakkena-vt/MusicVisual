@@ -27,8 +27,8 @@ public class PersonTest extends TestCase {
      * Sets up the test
      */
     public void setUp() {
-        person1 = new Person(1, "2018-03-14", HobbyEnum.MUSIC, MajorEnum.CS,
-            RegionEnum.NE_US);
+        person1 = new Person(1, "2018-03-14", MajorEnum.CS, RegionEnum.NE_US,
+            HobbyEnum.MUSIC);
         songs1 = new DLList<Song>();
         songs1.add(new Song("Hello", "Adele", 2015, "soul"));
         songs1.add(new Song("Beat It", "Michael Jackson", 1982, "pop"));
@@ -104,13 +104,14 @@ public class PersonTest extends TestCase {
     public void testGetDate() {
         assertEquals("2018-03-14", person1.getDate());
     }
-    
+
+
     /**
      * Tests toString
      */
     public void testToString() {
-        assertEquals("ID: 1, Region: NE_US, Hobby: MUSIC, Major CS"
-, person1.toString());
-        
+        assertEquals("ID: 1, Major CS, Region: NE_US, Hobby: MUSIC", person1
+            .toString());
+
     }
 }

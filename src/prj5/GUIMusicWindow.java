@@ -488,17 +488,29 @@ public class GUIMusicWindow {
      */
     public void tempOutput() {
         Iterator<Song> song = songs.iterator();
-        int readingHeard = 0;
-        int artHeard = 0;
-        int sportsHeard = 0;
-        int musicHeard = 0;
 
-        int readingLiked = 0;
-        int artLiked = 0;
-        int sportsLiked = 0;
-        int musicLiked = 0;
         int index = 0;
         while (song.hasNext()) {
+            int readingHeard = 0;
+            int artHeard = 0;
+            int sportsHeard = 0;
+            int musicHeard = 0;
+
+            int readingHeardNo = 0;
+            int artHeardNo = 0;
+            int sportsHeardNo = 0;
+            int musicHeardNo = 0;
+
+            int readingLiked = 0;
+            int artLiked = 0;
+            int sportsLiked = 0;
+            int musicLiked = 0;
+
+            int readingLikedNo = 0;
+            int artLikedNo = 0;
+            int sportsLikedNo = 0;
+            int musicLikedNo = 0;
+
             Iterator<Person> person = people.iterator();
             Song temp = song.next();
             while (person.hasNext()) {
@@ -517,6 +529,20 @@ public class GUIMusicWindow {
                         musicHeard++;
                     }
                 }
+                else if (!one.getSongs().get(index).getHeard()) {
+                    if (one.getHobby() == HobbyEnum.ART) {
+                        artHeardNo++;
+                    }
+                    if (one.getHobby() == HobbyEnum.READ) {
+                        readingHeardNo++;
+                    }
+                    if (one.getHobby() == HobbyEnum.SPORTS) {
+                        sportsHeardNo++;
+                    }
+                    if (one.getHobby() == HobbyEnum.MUSIC) {
+                        musicHeardNo++;
+                    }
+                }
                 if (one.getSongs().get(index).getLiked()) {
                     if (one.getHobby() == HobbyEnum.ART) {
                         artLiked++;
@@ -531,19 +557,72 @@ public class GUIMusicWindow {
                         musicLiked++;
                     }
                 }
+                else if (!one.getSongs().get(index).getLiked()) {
+                    if (one.getHobby() == HobbyEnum.ART) {
+                        artLikedNo++;
+                    }
+                    if (one.getHobby() == HobbyEnum.READ) {
+                        readingLikedNo++;
+                    }
+                    if (one.getHobby() == HobbyEnum.SPORTS) {
+                        sportsLikedNo++;
+                    }
+                    if (one.getHobby() == HobbyEnum.MUSIC) {
+                        musicLikedNo++;
+                    }
+                }
+
             }
-            index++;
+            int readingHeardFrac = 0;
+            int readingLikedFrac = 0;
+            int artHeardFrac = 0;
+            int artLikedFrac = 0;
+            int sportsHeardFrac = 0;
+            int sportsLikedFrac = 0;
+            int musicHeardFrac = 0;
+            int musicLikedFrac = 0;
+
+            if (readingHeard > 0) {
+                readingHeardFrac = readingHeard / (readingHeard
+                    + readingHeardNo);
+            }
+
+            if (readingLiked > 0) {
+                readingLikedFrac = readingLiked / (readingLiked
+                    + readingLikedNo);
+            }
+            if (musicHeard > 0) {
+                musicHeardFrac = musicHeard / (musicHeard + musicHeardNo);
+            }
+            if (musicLiked > 0) {
+                musicLikedFrac = musicLiked / (musicLiked + musicLikedNo);
+            }
+            if (sportsHeard > 0) {
+                sportsHeardFrac = sportsHeard / (sportsHeard + sportsHeardNo);
+            }
+            if (sportsLiked > 0) {
+                sportsLikedFrac = sportsLiked / (sportsLiked + sportsLikedNo);
+            }
+            if (artHeard > 0) {
+                artHeardFrac = artHeard / (artHeard + artHeardNo);
+            }
+            if (artLiked > 0) {
+                artLikedFrac = artLiked / (artLiked + artLikedNo);
+            }
             System.out.println("Song Title: " + temp.getName());
             System.out.println("Song Artist: " + temp.getArtist());
             System.out.println("Song Genre: " + temp.getGenre());
             System.out.println("Song Year: " + temp.getYear());
             System.out.println("Heard");
-            System.out.println("reading:" + readingHeard + " art:" + artHeard
-                + " sports:" + sportsHeard + " music:" + musicHeard);
+            System.out.println("reading:" + readingHeardFrac + " art:"
+                + artHeardFrac + " sports:" + sportsHeardFrac + " music:"
+                + musicHeardFrac);
             System.out.println("Likes");
-            System.out.println("reading:" + readingLiked + " art:" + artLiked
-                + " sports:" + sportsLiked + " music:" + musicLiked);
+            System.out.println("reading:" + readingLikedFrac + " art:"
+                + artLikedFrac + " sports:" + sportsLikedFrac + " music:"
+                + musicLikedFrac);
+            index++;
         }
-    }
 
+    }
 }

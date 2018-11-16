@@ -94,7 +94,6 @@ public class SurveyInput {
                         MajorEnum.getMajor(info[2]), RegionEnum.getRegion(
                             info[3]), HobbyEnum.getHobby(info[4]));
                     temp.setSongs(songs.clone());
-
                     DLList<Song> personSongs = temp.getSongs();
                     Iterator<Song> iterator = personSongs.iterator();
 
@@ -104,17 +103,18 @@ public class SurveyInput {
                         if (info[position].equals("Yes")) {
                             curr.setHeard(true);
                         }
-                        else {
+                        else if (info[position].equals("No")) {
                             curr.setHeard(false);
                         }
                         if (info[position + 1].equals("Yes")) {
                             curr.setLiked(true);
                         }
-                        else {
+                        else if (info[position + 1].equals("No")) {
                             curr.setLiked(false);
                         }
                         position += 2;
                     }
+                    System.out.println(temp.toString());
                     list.add(temp);
                 }
             }
